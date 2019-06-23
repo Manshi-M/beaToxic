@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>beaToxic</title>
+	<script type="text/javascript" src="paper-full.js"></script>
+	<link rel="stylesheet" type="text/css" href="beaToxic.css">
+
+	<script type="text/paperscript" canvas="myCanvas">
+		function onKeyDown(event) {
+			var maxPoint = new Point(view.size.width, view.size.height);
+			var randomPoint = Point.random();
+			var point = maxPoint * randomPoint;
+		new Path.Circle(point,50).fillColor = {
+        hue: 0, 
+        saturation: 0,
+        brightness: getRandomInRange(0.2, 0.8)
+    };
+    function getRandomInRange(min, max) {
+  		return Math.random() * (max - min) + min;
+	}
+}
+</script>
+</head>
+<body>
+	<canvas id="myCanvas" resize></canvas>
+</body>
+</html>
